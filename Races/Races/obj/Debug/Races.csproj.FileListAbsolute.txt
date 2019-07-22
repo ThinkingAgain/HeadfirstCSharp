@@ -1,0 +1,9 @@
+D:\WorkSpace\C#\HeadFirst\3\Races\Races\bin\Debug\Races.exe.config
+D:\WorkSpace\C#\HeadFirst\3\Races\Races\bin\Debug\Races.exe
+D:\WorkSpace\C#\HeadFirst\3\Races\Races\bin\Debug\Races.pdb
+D:\WorkSpace\C#\HeadFirst\3\Races\Races\obj\Debug\Races.csprojResolveAssemblyReference.cache
+D:\WorkSpace\C#\HeadFirst\3\Races\Races\obj\Debug\Races.Form1.resources
+D:\WorkSpace\C#\HeadFirst\3\Races\Races\obj\Debug\Races.Properties.Resources.resources
+D:\WorkSpace\C#\HeadFirst\3\Races\Races\obj\Debug\Races.csproj.GenerateResource.Cache
+D:\WorkSpace\C#\HeadFirst\3\Races\Races\obj\Debug\Races.exe
+D:\WorkSpace\C#\HeadFirst\3\Races\Races\obj\Debug\Races.pdb

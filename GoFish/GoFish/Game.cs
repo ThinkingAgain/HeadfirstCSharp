@@ -36,6 +36,11 @@ namespace GoFish
             //为每位玩家发5张牌
             //用foreach循环调用每位玩家的PullOutBooks()
             stock.Shuffle();
+            for (int i = 0; i < 5; i++)
+                foreach (Player p in players)
+                    p.TakeCard(stock.Deal(0));
+
+            
         }
     }
 }

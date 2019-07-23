@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GoFish
 {
-    enum Suits
+    public enum Suits
     {
         Spades, Clubs, Diamonds, Hearts
     }
-    enum Values
+    public enum Values
     {
         Ace = 1, Two = 2, Three = 3,
         Four =4, Five = 5, Six = 6,
@@ -18,7 +18,7 @@ namespace GoFish
         Ten = 10, Jace = 11, Queen = 12,
         King =13
     }
-    class Card
+    partial class Card
     {
         public Suits Suit { get; set; }
         public Values Value { get; set; }
@@ -29,6 +29,7 @@ namespace GoFish
             this.Value = value;
         }
     }
+
     class Deck
     {
         private List<Card> cards;
@@ -48,6 +49,9 @@ namespace GoFish
         {
             cards = new List<Card>(inititalCards);
         }
+
+        //牌的数量
+        public int Count { get { return cards.Count;  } }
 
         //得牌
         public void Add(Card cardToAdd) { cards.Add(cardToAdd); }
@@ -73,7 +77,35 @@ namespace GoFish
             cards = newCards;
         }
 
+        //
+        //public IEnumerable<string> GetCardNames()
+        //public void Sort()
 
+        //新增加的方法
+        
+        //查看给定序号的牌
+        public Card Peek(int cardNumber)
+        {
+            return cards[cardNumber];
+        }
+
+        //出最上面的第一张牌
+        public Card Deal() { return Deal(0); }
+
+        //public bool ContainsValue(Values value)
+        
+        //从一副牌中取出指定点数的牌并返回
+        public Deck PullOutValues(Values value)
+        {
+            Deck deckToReturn = new Deck(new Card[] { });
+            for (int i = cards.Count - 1; i >= 0; i--)
+                if (cards[i].Value == value)
+                    deckToReturn.Add(Deal(i));
+            return deckToReturn;
+        }
+
+        //public bool HasBook(Values value)
+        //public void SortByValue()
 
     }
 }

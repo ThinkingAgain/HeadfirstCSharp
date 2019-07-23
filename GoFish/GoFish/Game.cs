@@ -38,7 +38,9 @@ namespace GoFish
             stock.Shuffle();
             for (int i = 0; i < 5; i++)
                 foreach (Player p in players)
-                    p.TakeCard(stock.Deal(0));
+                    p.TakeCard(stock.Deal());
+            foreach (Player p in players)
+                p.PullOutBooks();
 
             
         }

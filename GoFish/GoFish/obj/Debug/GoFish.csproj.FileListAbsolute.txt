@@ -17,3 +17,13 @@ D:\github\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.csproj.GenerateResource
 D:\github\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.csproj.CoreCompileInputs.cache
 D:\github\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.exe
 D:\github\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.pdb
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\GoFish\GoFish\bin\Debug\GoFish.exe.config
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\GoFish\GoFish\bin\Debug\GoFish.exe
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\GoFish\GoFish\bin\Debug\GoFish.pdb
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.csprojAssemblyReference.cache
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.Form1.resources
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.Properties.Resources.resources
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.csproj.GenerateResource.cache
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.csproj.CoreCompileInputs.cache
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.exe
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\GoFish\GoFish\obj\Debug\GoFish.pdb

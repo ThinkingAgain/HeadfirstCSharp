@@ -8,15 +8,17 @@ namespace GoFish
 {
     public enum Suits
     {
-        Spades, Clubs, Diamonds, Hearts
+        //Spades, Clubs, Diamonds, Hearts
+        黑桃,梅花,方片,红桃
     }
     public enum Values
     {
         Ace = 1, Two = 2, Three = 3,
         Four =4, Five = 5, Six = 6,
         Seven = 7, Eight = 8, Nine = 9,
-        Ten = 10, Jace = 11, Queen = 12,
-        King =13
+        Ten = 10, J = 11, Q = 12,
+        K =13
+        
     }
     partial class Card
     {
@@ -31,7 +33,14 @@ namespace GoFish
 
         public string Name
         {
-            get { return Value.ToString() + " of " + Suit.ToString(); }
+                       
+            get {
+            string name = Suit.ToString()+"-";
+                if ((int)Value < 11)
+                    return name + (int)Value;
+                else
+                    return name + Value.ToString() ;
+ }
         }
 
     }

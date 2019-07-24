@@ -43,8 +43,25 @@ namespace GoFish
                 PullOutBooks(p);            
         }
 
-        //public bool PlayOneRound(int selectedPlayerCard) 已给
-                
+        public bool PlayOneRound(int selectedPlayerCard)
+        {
+            //进行一轮游戏。参数是玩家选择的牌
+            //取得牌的点数，然后遍历所有玩家调用AskForACard（）方法，
+            //如果返回true，调用PullOUtBooks()方法，
+            //整理人类玩家的手牌，检查牌堆是否还有牌
+            //如果没有牌了，显示“无牌，游戏结束！”并返回true否则返回false
+            Values cardToAskFor = players[0].Peek(selectedPlayerCard).Value;
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (i == 0)
+                    players[0].AskForACard(players, 0, stock, cardToAskFor);//continue...
+
+            }
+            //return true;
+
+
+        }
+
         public bool PullOutBooks(Player player)
         {
             //Pull out一个玩家的套牌

@@ -49,7 +49,18 @@ namespace GoFish
 
         }
 
-        //private void buttonAsk_Click(object sender, EventArgs e)
+        private void buttonAsk_Click(object sender, EventArgs e)
+        {
+            textProgress.Text = "";
+            if (listHand.SelectedIndex < 0) {
+                MessageBox.Show("请选择一张牌");
+                return;
+            }
+            if (game.PlayOneRound(listHand.SelectedIndex)) { }
+
+        }
+
+        
 
     }
 }

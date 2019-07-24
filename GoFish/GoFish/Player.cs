@@ -50,9 +50,53 @@ namespace GoFish
         }
 
         //public Values GetRandomValue()
-        //public Deck DoYouHaveAny(Values value)
+
+        public Deck DoYouHaveAny(Values value)
+        {
+            //对手向你叫某个点数的牌
+            //使用Deck.PullOutValues()取出该点数的牌。
+            //在TextBox中增加一行“乔伊有3张6”-使用Card.Plural()静态方法-中文不用，嘻嘻 没复数
+            Deck askFor = cards.PullOutValues(value);
+            if (askFor.Count > 0)
+            {
+                textBoxOnForm.Text += name + "有" + askFor.Count + "张" + Card.returnPoints(value)
+                    + Environment.NewLine;
+            }
+            return askFor;
+
+        }
         //pulbic void AskForACard(List<Player> players, int myIndex, Deck stock)
-        //public void AskForACard(List<Player> players, int myIndex, Deck stock, Values value)
+        public void AskForACard(List<Player> players, int myIndex, Deck stock, Values value)
+        {
+            //向其它玩家要牌
+            //首先在TextBox中增加一行“乔伊问有人有Q吗？”
+            //然后遍历玩家看是否有所叫点数（用DoYouHaveAny()方法）。
+            //如果有的话，将牌传入你的手牌。keep track of how many cards were added
+            //如果没有，你要从牌堆中抽一张牌。
+            //关在TextBox 中增加一行：“乔伊不得不从牌堆中抽牌”
+            string points;
+            if ((int)value > 10)  points = value.ToString();
+            else points = ((int)value).ToString();
+
+            textBoxOnForm.Text += name + "叫牌：" + points + Environment.NewLine;
+            int numberOfAsk = 0;
+            foreach (Player p in players)
+            {
+                if (p.Equals(this)) continue;
+                Deck getCards = p.DoYouHaveAny(value);
+                if (getCards.Count == 0) continue;
+                numberOfAsk += getCards.Count;
+                textBoxOnForm.Text += name + "从" + p.name +"手中取得" +
+                    getCards.Count + "张" + points + Environment.NewLine;
+                while (getCards.Count != 0)
+                    cards.Add(getCards.Deal());
+            }
+            if (numberOfAsk == 0 && stock.Count > 0){
+                textBoxOnForm.Text += name + "不得不从牌堆中抽一张牌。" +
+                    Environment.NewLine;
+                cards.Add(stock.Deal());
+            }
+        }
 
         //以下是已写好的小方法
         public int CardCount{ get{return cards.Count;}}
@@ -61,8 +105,8 @@ namespace GoFish
         public void TakeCard(Card card) { cards.Add(card); }
 
         public IEnumerable<string> GetCardNames() { return cards.GetCardNames(); }
-        
-        //public Card Peek(int cardNumber)
+
+        public Card Peek(int cardNumber) { return cards.Peek(cardNumber); }
 
         //将手中的牌排序
         public void SortHand() { cards.SortByValue(); }
@@ -74,5 +118,12 @@ namespace GoFish
     public partial class Card
     {
         //public static string Plural(Values value)
+        public static string returnPoints(Values value)
+        {
+            string points;
+            if ((int)value > 10) points = value.ToString();
+            else points = ((int)value).ToString();
+            return points;
+        }
     }
 }

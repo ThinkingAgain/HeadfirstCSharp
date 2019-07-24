@@ -45,7 +45,7 @@
             this.listHand.FormattingEnabled = true;
             this.listHand.ItemHeight = 28;
             this.listHand.Location = new System.Drawing.Point(531, 68);
-            this.listHand.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.listHand.Margin = new System.Windows.Forms.Padding(5);
             this.listHand.Name = "listHand";
             this.listHand.Size = new System.Drawing.Size(355, 508);
             this.listHand.TabIndex = 0;
@@ -53,7 +53,7 @@
             // textProgress
             // 
             this.textProgress.Location = new System.Drawing.Point(46, 141);
-            this.textProgress.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textProgress.Margin = new System.Windows.Forms.Padding(5);
             this.textProgress.Multiline = true;
             this.textProgress.Name = "textProgress";
             this.textProgress.ReadOnly = true;
@@ -63,7 +63,7 @@
             // textBooks
             // 
             this.textBooks.Location = new System.Drawing.Point(46, 475);
-            this.textBooks.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBooks.Margin = new System.Windows.Forms.Padding(5);
             this.textBooks.Multiline = true;
             this.textBooks.Name = "textBooks";
             this.textBooks.ReadOnly = true;
@@ -74,19 +74,20 @@
             // 
             this.buttonAsk.Enabled = false;
             this.buttonAsk.Location = new System.Drawing.Point(531, 574);
-            this.buttonAsk.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonAsk.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAsk.Name = "buttonAsk";
             this.buttonAsk.Size = new System.Drawing.Size(356, 45);
             this.buttonAsk.TabIndex = 3;
             this.buttonAsk.Text = "要牌";
             this.buttonAsk.UseVisualStyleBackColor = true;
+            this.buttonAsk.Click += new System.EventHandler(this.buttonAsk_Click);
             // 
             // buttonStart
             // 
             this.buttonStart.Enabled = false;
             this.buttonStart.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonStart.Location = new System.Drawing.Point(260, 68);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(5);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(246, 35);
             this.buttonStart.TabIndex = 4;
@@ -98,7 +99,7 @@
             // 
             this.textName.Enabled = false;
             this.textName.Location = new System.Drawing.Point(46, 68);
-            this.textName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textName.Margin = new System.Windows.Forms.Padding(5);
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(204, 35);
             this.textName.TabIndex = 5;
@@ -159,7 +160,7 @@
             this.Controls.Add(this.textProgress);
             this.Controls.Add(this.listHand);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

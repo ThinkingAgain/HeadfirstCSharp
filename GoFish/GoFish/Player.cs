@@ -55,14 +55,17 @@ namespace GoFish
         //public void AskForACard(List<Player> players, int myIndex, Deck stock, Values value)
 
         //以下是已写好的小方法
-        //public int CardCount{ get{return cards.Count;}}
+        public int CardCount{ get{return cards.Count;}}
         
         //得到一张牌
         public void TakeCard(Card card) { cards.Add(card); }
 
-        //public IEnumerable<string> GetCardNames()
+        public IEnumerable<string> GetCardNames() { return cards.GetCardNames(); }
+        
         //public Card Peek(int cardNumber)
-        //public void SortHand()
+
+        //将手中的牌排序
+        public void SortHand() { cards.SortByValue(); }
 
         
     }

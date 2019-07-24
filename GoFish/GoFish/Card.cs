@@ -28,6 +28,12 @@ namespace GoFish
             this.Suit = suit;
             this.Value = value;
         }
+
+        public string Name
+        {
+            get { return Value.ToString() + " of " + Suit.ToString(); }
+        }
+
     }
 
     class Deck
@@ -78,7 +84,16 @@ namespace GoFish
         }
 
         //
-        //public IEnumerable<string> GetCardNames()
+
+        public IEnumerable<string> GetCardNames()
+        {
+            string[] CardNames = new string[cards.Count];
+            for (int i = 0; i < cards.Count; i++)
+                CardNames[i] = cards[i].Name;
+            return CardNames;
+        }
+        
+            
         //public void Sort()
 
         //新增加的方法
@@ -105,7 +120,21 @@ namespace GoFish
         }
 
         //public bool HasBook(Values value)
-        //public void SortByValue()
+        
+        //按先点数后花色排序
+        public void SortByValue() { cards.Sort(new CardComparer_byValue()); }
 
+    }
+
+    class CardComparer_byValue : IComparer<Card>
+    {
+        public int Compare(Card x, Card y)
+        {
+            if (x.Value < y.Value) return -1;
+            if (x.Value > y.Value) return 1;
+            if (x.Suit < y.Suit) return -1;
+            if (x.Suit > y.Suit) return 1;
+            return 0;
+        }
     }
 }

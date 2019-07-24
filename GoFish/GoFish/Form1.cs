@@ -29,9 +29,28 @@ namespace GoFish
                 return;
             }
             game = new Game(textName.Text, new List<string> { "乔伊", "鲍勃" }, textProgress);
-
+            buttonStart.Enabled = false;
+            textName.Enabled = false;
+            buttonAsk.Enabled = true;
+            UpdateForm();
 
         }
+
+        private void UpdateForm()
+        {
+            //在Listbox中显示玩家手中的牌
+            listHand.Items.Clear();
+            foreach (String cardName in game.GetPlayerCardNames())
+                listHand.Items.Add(cardName);
+            textBooks.Text = game.DescribeBooks();
+            textProgress.Text += game.DescribePlayerHands();
+            textProgress.SelectionStart = textProgress.Text.Length;
+            textProgress.ScrollToCaret();
+
+        }
+
+        //private void buttonAsk_Click(object sender, EventArgs e)
+
     }
 }
 

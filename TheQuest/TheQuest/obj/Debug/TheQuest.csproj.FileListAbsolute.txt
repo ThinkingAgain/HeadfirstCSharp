@@ -1,0 +1,10 @@
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\bin\Debug\TheQuest.exe.config
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\bin\Debug\TheQuest.exe
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\bin\Debug\TheQuest.pdb
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.csprojAssemblyReference.cache
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.Form1.resources
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.Properties.Resources.resources
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.csproj.GenerateResource.cache
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.csproj.CoreCompileInputs.cache
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.exe
+D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.pdb

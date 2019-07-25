@@ -49,7 +49,11 @@ namespace GoFish
             return books;
         }
 
-        //public Values GetRandomValue()
+        public Values GetRandomValue()
+        {
+            Card randomCard = cards.Peek(random.Next(cards.Count));
+            return randomCard.Value;
+        }
 
         public Deck DoYouHaveAny(Values value)
         {
@@ -65,7 +69,20 @@ namespace GoFish
             return askFor;
 
         }
-        //pulbic void AskForACard(List<Player> players, int myIndex, Deck stock)
+
+        public void AskForACard(List<Player> players, int myIndex, Deck stock)
+        {
+            //AskForACard的重载-使用GetRandomValue()方法选择一张牌调用另一
+            //版本AskForACard方法叫牌
+            if (stock.Count > 0)
+            {
+                if (cards.Count == 0)
+                    cards.Add(stock.Deal());
+                Values randomValue = GetRandomValue();
+                AskForACard(players, myIndex, stock, randomValue);
+            }
+        }
+        
         public void AskForACard(List<Player> players, int myIndex, Deck stock, Values value)
         {
             //向其它玩家要牌

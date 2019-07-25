@@ -56,7 +56,14 @@ namespace GoFish
                 MessageBox.Show("请选择一张牌");
                 return;
             }
-            if (game.PlayOneRound(listHand.SelectedIndex)) { }
+            if (game.PlayOneRound(listHand.SelectedIndex))
+            {
+                textProgress.Text += game.GetWinnerName() + "赢得牌局！";
+                textBooks.Text = game.DescribeBooks();
+                buttonAsk.Enabled = false;
+            }
+            else
+                UpdateForm();
 
         }
 

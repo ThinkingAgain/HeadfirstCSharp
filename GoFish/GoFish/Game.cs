@@ -54,10 +54,30 @@ namespace GoFish
             for (int i = 0; i < players.Count; i++)
             {
                 if (i == 0)
-                    players[0].AskForACard(players, 0, stock, cardToAskFor);//continue...
+                    players[0].AskForACard(players, 0, stock, cardToAskFor);
+                else
+                    players[i].AskForACard(players, i, stock);
+                if (PullOutBooks(players[i]))
+                {
+                    textBoxOnForm.Text += players[i].Name +
+                        "得到一手新的套牌！" + Environment.NewLine;
+                    int card = 1;
+                    while (card <= 5 && stock.Count > 0)
+                    {
+                        players[i].TakeCard(stock.Deal());
+                        card++;
+                    }
+                }
+                players[0].SortHand();
+                if (stock.Count == 0)
+                {
+                    textBoxOnForm.Text = "牌堆已空，游戏结束！" + Environment.NewLine;
+                    return true;
+                }
+             
 
             }
-            //return true;
+            return false;
 
 
         }
@@ -81,11 +101,44 @@ namespace GoFish
             //从Books字典中返回一串文本描述玩家拥有的套牌情况
             string description = "";
             foreach (var book in books)
-                description += book.Value + " 取得套牌：" + book.Key 
+                description += book.Value.Name + " 取得套牌：" + book.Key 
                     + Environment.NewLine;
             return description;
         }
-        //public string GetWinnerName()
+
+        public string GetWinnerName()
+        {
+            Dictionary<string, int> winners = new Dictionary<string, int>();
+            foreach (Values value in books.Keys)
+            {
+                string name = books[value].Name;
+                if (winners.ContainsKey(name))
+                    winners[name]++;
+                else
+                    winners.Add(name, 1);
+            }
+            int mostBooks = 0;
+            foreach (string name in winners.Keys)
+                if (winners[name] > mostBooks)
+                    mostBooks = winners[name];
+            bool tie = false;
+            string winnerList = "";
+            foreach(string name in winners.Keys)
+                if (winners[name] == mostBooks)
+                {
+                    if (!String.IsNullOrEmpty(winnerList))
+                    {
+                        winnerList += "和";
+                        tie = true;
+                    }
+                    winnerList += name;
+                }
+            winnerList += "以" + mostBooks + "套牌";
+            if (tie)
+                return "平局:" + winnerList;
+            else
+                return winnerList;
+        }
         
         public IEnumerable<string> GetPlayerCardNames()
         {

@@ -43,19 +43,19 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.player = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.player = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -267,30 +267,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(196, 83);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
-            // player
-            // 
-            this.player.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.player.AutoSize = true;
-            this.player.Location = new System.Drawing.Point(3, 0);
-            this.player.Name = "player";
-            this.player.Size = new System.Drawing.Size(71, 20);
-            this.player.TabIndex = 0;
-            this.player.Text = "Player";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 20);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "label2";
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -363,6 +339,30 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "label8";
             // 
+            // player
+            // 
+            this.player.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.player.AutoSize = true;
+            this.player.Location = new System.Drawing.Point(3, 0);
+            this.player.Name = "player";
+            this.player.Size = new System.Drawing.Size(71, 20);
+            this.player.TabIndex = 0;
+            this.player.Text = "Player";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(80, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "label2";
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
@@ -376,15 +376,6 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "移动";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(54, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 26);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "↑";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -412,6 +403,15 @@
             this.button4.TabIndex = 23;
             this.button4.Text = "→";
             this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(54, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 26);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "↑";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -465,7 +465,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TheQuest.Properties.Resources.dungeon600x400;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -494,6 +494,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "The Quest";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

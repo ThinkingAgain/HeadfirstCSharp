@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace TheQuest
 {
@@ -23,5 +24,14 @@ namespace TheQuest
                 return names;
             }
         }
+
+        //方法定义：
+
+        public Player(Game game, Point location)
+            : base(game, location)
+        {
+            HitPoints = 10;            
+        }
+
     }
 }

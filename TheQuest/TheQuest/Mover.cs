@@ -13,5 +13,14 @@ namespace TheQuest
         protected Point location;
         public Point Location { get { return location; } }
         protected Game game;
+
+        //方法定义：
+
+        public Mover(Game game, Point location)
+        {
+            this.game = game;
+            this.location = location;
+        }
+
     }
 }

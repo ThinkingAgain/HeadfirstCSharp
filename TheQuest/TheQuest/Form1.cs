@@ -22,8 +22,84 @@ namespace TheQuest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            game = new Game(new Rectangle(78, 57, 420, 155));
-            //Todo...0(Game)
+            game = new Game(new Rectangle(128, 90, 705, 271));
+            game.NewLevel(random);
+            UpdateCharacters();
+            Player.Visible = true;
+        }
+
+        private void UpdateCharacters()
+        {
+            //更新玩家位置和显示点数的标签
+            Player.Location = game.PlayerLocation;
+            playerHitPoints.Text =
+                game.PlayerHitPoints.ToString();
+
+            //定义显示敌人的变量
+            bool showBat = false;
+            bool showGhost = false;
+            bool showGhoul = false;
+            int enemiesShown = 0;
+            
+            //更新敌人位置
+            foreach (Enemy enemy in game.Enemies)
+            {
+                if (enemy is Bat)
+                {
+                    bat.Location = enemy.Location;
+                    batHitPoints.Text = enemy.HitPoints.ToString();
+                    if (enemy.HitPoints > 0)
+                    {
+                        showBat = true;
+                        enemiesShown++;
+                    }
+                }
+            }
+            bat.Visible = showBat;
+
+
+            //更新武器PictureBox
+            sword.Visible = false;
+            bow.Visible = false;
+            redPotion.Visible = false;
+            bluePotion.Visible = false;
+            mace.Visible = false;
+            Control weaponControl = null;
+            switch (game.WeaponInRoom.Name)
+            {
+                case "Sword":
+                    weaponControl = sword; break;
+            }
+
+            //设置各武器清单图标的Visible属性
+            if (game.CheckPlayerInventory("Sword"))
+                hasSword.Visible = true;
+            else hasSword.Visible = false;
+            if (game.CheckPlayerInventory("Bow"))
+                hasBow.Visible = true;
+            else hasBow.Visible = false;
+            if (game.CheckPlayerInventory("Mace"))
+                hasMace.Visible = true;
+            else hasMace.Visible = false;
+
+
+            weaponControl.Location = game.WeaponInRoom.Location;
+            if (game.WeaponInRoom.PickedUp)
+                weaponControl.Visible = false;
+            else weaponControl.Visible = true;
+
+            if (game.PlayerHitPoints <= 0)
+            {
+                MessageBox.Show("You died");
+                Application.Exit();
+            }
+
+            if(enemiesShown < 1)
+            {
+                MessageBox.Show("You have defeated the enemies on this level");
+             //   game.NewLevel(random);
+            //    UpdateCharacters(); 
+            }
         }
     }
 }

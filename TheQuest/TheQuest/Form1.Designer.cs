@@ -52,10 +52,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.playerHitPoints = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.moveDown = new System.Windows.Forms.Button();
+            this.moveLeft = new System.Windows.Forms.Button();
+            this.moveRight = new System.Windows.Forms.Button();
+            this.moveUp = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -90,6 +90,7 @@
             this.hasSword.Size = new System.Drawing.Size(69, 69);
             this.hasSword.TabIndex = 5;
             this.hasSword.TabStop = false;
+            this.hasSword.Click += new System.EventHandler(this.hasSword_Click);
             // 
             // hasBluePotion
             // 
@@ -366,10 +367,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.moveDown);
+            this.groupBox1.Controls.Add(this.moveLeft);
+            this.groupBox1.Controls.Add(this.moveRight);
+            this.groupBox1.Controls.Add(this.moveUp);
             this.groupBox1.Location = new System.Drawing.Point(543, 467);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(140, 81);
@@ -377,41 +378,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "移动";
             // 
-            // button2
+            // moveDown
             // 
-            this.button2.Location = new System.Drawing.Point(54, 43);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 26);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "↓";
-            this.button2.UseVisualStyleBackColor = true;
+            this.moveDown.Location = new System.Drawing.Point(54, 43);
+            this.moveDown.Name = "moveDown";
+            this.moveDown.Size = new System.Drawing.Size(37, 26);
+            this.moveDown.TabIndex = 21;
+            this.moveDown.Text = "↓";
+            this.moveDown.UseVisualStyleBackColor = true;
+            this.moveDown.Click += new System.EventHandler(this.moveDown_Click);
             // 
-            // button3
+            // moveLeft
             // 
-            this.button3.Location = new System.Drawing.Point(11, 25);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(37, 26);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "←";
-            this.button3.UseVisualStyleBackColor = true;
+            this.moveLeft.Location = new System.Drawing.Point(11, 25);
+            this.moveLeft.Name = "moveLeft";
+            this.moveLeft.Size = new System.Drawing.Size(37, 26);
+            this.moveLeft.TabIndex = 22;
+            this.moveLeft.Text = "←";
+            this.moveLeft.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // moveRight
             // 
-            this.button4.Location = new System.Drawing.Point(97, 25);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(37, 26);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "→";
-            this.button4.UseVisualStyleBackColor = true;
+            this.moveRight.Location = new System.Drawing.Point(97, 25);
+            this.moveRight.Name = "moveRight";
+            this.moveRight.Size = new System.Drawing.Size(37, 26);
+            this.moveRight.TabIndex = 23;
+            this.moveRight.Text = "→";
+            this.moveRight.UseVisualStyleBackColor = true;
+            this.moveRight.Click += new System.EventHandler(this.moveRight_Click);
             // 
-            // button1
+            // moveUp
             // 
-            this.button1.Location = new System.Drawing.Point(54, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 26);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "↑";
-            this.button1.UseVisualStyleBackColor = true;
+            this.moveUp.Location = new System.Drawing.Point(54, 11);
+            this.moveUp.Name = "moveUp";
+            this.moveUp.Size = new System.Drawing.Size(37, 26);
+            this.moveUp.TabIndex = 0;
+            this.moveUp.Text = "↑";
+            this.moveUp.UseVisualStyleBackColor = true;
+            this.moveUp.Click += new System.EventHandler(this.moveUp_Click);
             // 
             // groupBox2
             // 
@@ -465,7 +469,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TheQuest.Properties.Resources.dungeon600x400;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -487,6 +491,7 @@
             this.Controls.Add(this.sword);
             this.Controls.Add(this.bow);
             this.Controls.Add(this.mace);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -543,10 +548,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label playerHitPoints;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button moveDown;
+        private System.Windows.Forms.Button moveLeft;
+        private System.Windows.Forms.Button moveRight;
+        private System.Windows.Forms.Button moveUp;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

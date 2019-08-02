@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace TheQuest
 {
@@ -31,7 +32,12 @@ namespace TheQuest
             
         }
 
-        //public void Move(Direction directin, Random random)
+        public void Move(Direction direction, Random random)
+        {
+            
+            player.Move(direction);
+            //Todo:player
+        }
 
         //public void Equip(string weaponName)
 

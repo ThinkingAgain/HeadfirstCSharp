@@ -17,6 +17,8 @@ namespace TheQuest
                 PickedUp = false;            
         }
 
+        public void PickUpWeapon() { PickedUp = true; }
+
     }
 
     class Sword: Weapon
@@ -25,5 +27,7 @@ namespace TheQuest
         public Sword(Game game, Point location) : base(game, location)
         { }
     }
+
+
 
 }

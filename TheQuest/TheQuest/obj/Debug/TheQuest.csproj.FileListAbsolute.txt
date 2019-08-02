@@ -8,3 +8,13 @@ D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\Th
 D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.csproj.CoreCompileInputs.cache
 D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.exe
 D:\workspace\github\ThinkingAgain\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.pdb
+D:\github\HeadfirstCSharp\TheQuest\TheQuest\bin\Debug\TheQuest.exe.config
+D:\github\HeadfirstCSharp\TheQuest\TheQuest\bin\Debug\TheQuest.exe
+D:\github\HeadfirstCSharp\TheQuest\TheQuest\bin\Debug\TheQuest.pdb
+D:\github\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.csprojAssemblyReference.cache
+D:\github\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.Form1.resources
+D:\github\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.Properties.Resources.resources
+D:\github\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.csproj.GenerateResource.cache
+D:\github\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.csproj.CoreCompileInputs.cache
+D:\github\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.exe
+D:\github\HeadfirstCSharp\TheQuest\TheQuest\obj\Debug\TheQuest.pdb

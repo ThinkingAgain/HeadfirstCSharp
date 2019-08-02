@@ -22,7 +22,7 @@ namespace TheQuest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            game = new Game(new Rectangle(128, 90, 705, 271));
+            game = new Game(new Rectangle(128, 90, 655, 221));
             game.NewLevel(random);
             UpdateCharacters();
             Player.Visible = true;
@@ -30,10 +30,12 @@ namespace TheQuest
 
         private void UpdateCharacters()
         {
+            
             //更新玩家位置和显示点数的标签
             Player.Location = game.PlayerLocation;
             playerHitPoints.Text =
                 game.PlayerHitPoints.ToString();
+            
 
             //定义显示敌人的变量
             bool showBat = false;
@@ -73,16 +75,28 @@ namespace TheQuest
 
             //设置各武器清单图标的Visible属性
             if (game.CheckPlayerInventory("Sword"))
+            {
                 hasSword.Visible = true;
+                if (game.PlayerWeapons.Count() == 1)
+                    hasSword.BorderStyle = BorderStyle.FixedSingle;
+            }
             else hasSword.Visible = false;
             if (game.CheckPlayerInventory("Bow"))
+            {
                 hasBow.Visible = true;
+                if (game.PlayerWeapons.Count() == 1)
+                    hasSword.BorderStyle = BorderStyle.FixedSingle;
+            }
             else hasBow.Visible = false;
             if (game.CheckPlayerInventory("Mace"))
+            {
                 hasMace.Visible = true;
+                if (game.PlayerWeapons.Count() == 1)
+                    hasSword.BorderStyle = BorderStyle.FixedSingle;
+            }
             else hasMace.Visible = false;
 
-
+            
             weaponControl.Location = game.WeaponInRoom.Location;
             if (game.WeaponInRoom.PickedUp)
                 weaponControl.Visible = false;
@@ -100,6 +114,32 @@ namespace TheQuest
              //   game.NewLevel(random);
             //    UpdateCharacters(); 
             }
+        }
+
+        private void hasSword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void moveUp_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Up, random);
+            UpdateCharacters();
+         
+            
+            //Todo:game.move()
+        }
+
+        private void moveRight_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Right, random);
+            UpdateCharacters();
+        }
+
+        private void moveDown_Click(object sender, EventArgs e)
+        {
+            game.Move(Direction.Down, random);
+            UpdateCharacters();
         }
     }
 }
